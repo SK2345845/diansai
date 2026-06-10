@@ -148,7 +148,8 @@ TIMER1.$name              = "TIMER_0";
 TIMER1.peripheral.$assign = "TIMA0";
 
 UART1.$name                    = "UART_0";
-UART1.targetBaudRate           = 115200;
+UART1.targetBaudRate           = 230400;
+UART1.enabledInterrupts        = ["RX"];
 UART1.peripheral.$assign       = "UART0";
 UART1.peripheral.rxPin.$assign = "PA1";
 UART1.peripheral.txPin.$assign = "PA0";

@@ -1,7 +1,7 @@
 # FIXED
 
-targetConfigs/uart1/uart1.o: ../targetConfigs/uart1/uart1.c \
- ../targetConfigs/uart1/uart1.h \
+targetConfigs/as201/as201.o: ../targetConfigs/as201/as201.c \
+ ../targetConfigs/as201/as201.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/FreeRTOS.h \
  D:/compitation/NUEDC/diansai/freertos_builds_LP_MSPM0G3507_release_ticlang/FreeRTOSConfig.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/freertos/PTLS.h \
@@ -95,8 +95,9 @@ targetConfigs/uart1/uart1.o: ../targetConfigs/uart1/uart1.c \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_vref.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_wwdt.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_interrupt.h \
- D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_systick.h
-../targetConfigs/uart1/uart1.h:
+ D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_systick.h \
+ D:/compitation/NUEDC/diansai/freertos/targetConfigs/oled/OLED_Task.h
+../targetConfigs/as201/as201.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/FreeRTOS.h:
 D:/compitation/NUEDC/diansai/freertos_builds_LP_MSPM0G3507_release_ticlang/FreeRTOSConfig.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/freertos/PTLS.h:
@@ -191,3 +192,4 @@ D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_vref.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_wwdt.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_interrupt.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_systick.h:
+D:/compitation/NUEDC/diansai/freertos/targetConfigs/oled/OLED_Task.h:

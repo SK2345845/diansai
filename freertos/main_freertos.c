@@ -54,8 +54,8 @@
 /* OLED 任务头文件 */
 #include "targetConfigs/oled/OLED_Task.h"
 
-/* 串口打印任务头文件 */
-#include "targetConfigs/uart1/uart1.h"
+/* AS201 激光雷达任务头文件 */
+#include "targetConfigs/as201/as201.h"
 
 /* AS201 IMU 任务头文件 */
 // #include "src/as201/AS201.h"
@@ -69,6 +69,7 @@ extern void *mainThread(void *arg0);
 static void prvSetupHardware(void);
 
 /*
+
  *  ======== main ========
  */
 int main(void)
@@ -84,8 +85,8 @@ int main(void)
     /* Initialize OLED FreeRTOS tasks */
     Oled_FreeRTOS_Init();
 
-    /* Initialize UART FreeRTOS tasks */
-    Uart_FreeRTOS_Init();
+    /* Initialize AS201 Laser FreeRTOS tasks */
+    As201_FreeRTOS_Init();
 
     /* Initialize AS201 IMU Tasks */
     // IMU_FreeRTOS_Init();
@@ -95,16 +96,12 @@ int main(void)
 
     return (0);
 }
-// 初始化硬件
-// @param void
 static void prvSetupHardware(void)
 {
     SYSCFG_DL_init();
 }
-
 /*-----------------------------------------------------------*/
-// 内存分配失败钩函数
-// @param void
+
 void vApplicationMallocFailedHook(void)
 {
     /*
@@ -125,8 +122,7 @@ void vApplicationMallocFailedHook(void)
         ;
 }
 /*-----------------------------------------------------------*/
-// 空闲钩函数
-// @param void
+
 void vApplicationIdleHook(void)
 {
     /*
@@ -143,7 +139,7 @@ void vApplicationIdleHook(void)
      */
 }
 /*-----------------------------------------------------------*/
-// 栈溢出钩函数
+
 #if (configCHECK_FOR_STACK_OVERFLOW)
 /*
      *  ======== vApplicationStackOverflowHook ========

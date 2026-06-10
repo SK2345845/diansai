@@ -94,9 +94,6 @@ void vTaskKeyScan(void *pvParameters) {
         if (++display_div >= 5) {
             display_div = 0;
             
-            // 刷新第一行英文，确保始终显示
-            Oled_Queue_ShowString(1, 1, "Sys Init OK!");
-            
             // 右下角闪烁点，证明系统没死机
             static uint8_t dot_state = 0;
             dot_state = !dot_state;
@@ -158,8 +155,6 @@ void vTaskKeyLogic(void *pvParameters) {
     uint8_t received_key_id = KEY_NONE;
     
     // 初始化显示屏幕框架
-    Oled_Queue_Clear();
-    Oled_Queue_ShowString(1, 1, "Sys Init OK!");
     
     while (1) {
         // 无限期阻塞等待按键有效按下消息（消抖并松手后才触发下一轮）

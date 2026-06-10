@@ -125,8 +125,7 @@ GEN_OPTS__QUOTED :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 . \
-targetConfigs/23l \
+targetConfigs/as201 \
 targetConfigs/key \
 targetConfigs/oled \
-targetConfigs/uart1 \
 

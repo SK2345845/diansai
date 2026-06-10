@@ -12,8 +12,8 @@ void Oled_FreeRTOS_Init(void) {
     // 1. 初始化底层 OLED
     OLED_Init();
 
-    // 2. 创建 OLED 消息队列（队列深度设为 10，可根据实际刷新频率调整）
-    xOledQueue = xQueueCreate(10, sizeof(OledMsg_t));
+    // 2. 创建 OLED 消息队列（队列深度设为 30，以处理更多并发显示指令）
+    xOledQueue = xQueueCreate(30, sizeof(OledMsg_t));
     configASSERT(xOledQueue != NULL);
     
     // 3. 创建 OLED 显示任务

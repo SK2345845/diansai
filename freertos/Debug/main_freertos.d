@@ -103,7 +103,7 @@ main_freertos.o: ../main_freertos.c \
  syscfg/ti_msp_dl_config.h \
  ../targetConfigs/key/ADC_SCAN.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/queue.h \
- ../targetConfigs/oled/OLED_Task.h ../targetConfigs/uart1/uart1.h
+ ../targetConfigs/oled/OLED_Task.h ../targetConfigs/as201/as201.h
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/ticlang/pthread.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/ticlang/sys/types.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/ticlang/sys/_internal.h:
@@ -207,4 +207,4 @@ syscfg/ti_msp_dl_config.h:
 ../targetConfigs/key/ADC_SCAN.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/queue.h:
 ../targetConfigs/oled/OLED_Task.h:
-../targetConfigs/uart1/uart1.h:
+../targetConfigs/as201/as201.h:

@@ -2,12 +2,11 @@
 "./startup_mspm0g350x_ticlang.o"
 "./main_freertos.o"
 "./ti_drivers_config.o"
-"./targetConfigs/23l/23L_uart.o"
+"./targetConfigs/as201/as201.o"
 "./targetConfigs/key/ADC_SCAN.o"
 "./targetConfigs/key/ADC_init.o"
 "./targetConfigs/oled/OLED.o"
 "./targetConfigs/oled/OLED_Task.o"
-"./targetConfigs/uart1/uart1.o"
 -l"syscfg/device_linker.cmd"
 -l"D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/drivers/lib/ticlang/m0p/drivers_mspm0g1x0x_g3x0x.a"
 -lfreertos_builds_LP_MSPM0G3507_release_ticlang.lib
