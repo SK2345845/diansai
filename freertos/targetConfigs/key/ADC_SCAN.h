@@ -1,6 +1,6 @@
 #ifndef __ADC_SCAN_H__
 #define __ADC_SCAN_H__
-
+//
 #include "FreeRTOS.h"
 #include "queue.h"
 #include "task.h"
