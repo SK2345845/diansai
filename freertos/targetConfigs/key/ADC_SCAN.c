@@ -99,8 +99,8 @@ void vTaskKeyScan(void *pvParameters) {
             dot_state = !dot_state;
             Oled_Queue_ShowChar(4, 16, dot_state ? '.' : ' ');
             
-            Oled_Queue_ShowString(2, 1, "ADC Val: ");
-            Oled_Queue_ShowNum(2, 10, adc_raw_value, 4);
+            //Oled_Queue_ShowString(2, 1, "ADC Val: ");
+            //Oled_Queue_ShowNum(2, 10, adc_raw_value, 4);
             Oled_Queue_ShowString(3, 1, "Key Idx: ");
             Oled_Queue_ShowNum(3, 10, sample_key, 2);
         }
