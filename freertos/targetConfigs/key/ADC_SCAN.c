@@ -95,15 +95,15 @@ void vTaskKeyScan(void *pvParameters) {
             display_div = 0;
             
             // 刷新第一行英文，确保始终显示
-            Oled_Queue_ShowString(1, 1, "Sys Init OK!");
+            //Oled_Queue_ShowString(1, 1, "Sys Init OK!");
             
             // 右下角闪烁点，证明系统没死机
             static uint8_t dot_state = 0;
             dot_state = !dot_state;
             Oled_Queue_ShowChar(4, 16, dot_state ? '.' : ' ');
             
-            Oled_Queue_ShowString(2, 1, "ADC Val: ");
-            Oled_Queue_ShowNum(2, 10, adc_raw_value, 4);
+            //Oled_Queue_ShowString(2, 1, "ADC Val: ");
+            //Oled_Queue_ShowNum(2, 10, adc_raw_value, 4);
             Oled_Queue_ShowString(3, 1, "Key Idx: ");
             Oled_Queue_ShowNum(3, 10, sample_key, 2);
         }
