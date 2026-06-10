@@ -19,6 +19,7 @@ ORDERED_OBJS += \
 "./targetConfigs/key/ADC_init.o" \
 "./targetConfigs/oled/OLED.o" \
 "./targetConfigs/oled/OLED_Task.o" \
+"./targetConfigs/uart1/uart1.o" \
 $(GEN_CMDS__FLAG) \
 -Wl,-l"D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/drivers/lib/ticlang/m0p/drivers_mspm0g1x0x_g3x0x.a" \
 -Wl,-lfreertos_builds_LP_MSPM0G3507_release_ticlang.lib \
@@ -36,10 +37,12 @@ RMDIR := RMDIR /S/Q
 -include targetConfigs/23l/subdir_vars.mk
 -include targetConfigs/key/subdir_vars.mk
 -include targetConfigs/oled/subdir_vars.mk
+-include targetConfigs/uart1/subdir_vars.mk
 -include subdir_rules.mk
 -include targetConfigs/23l/subdir_rules.mk
 -include targetConfigs/key/subdir_rules.mk
 -include targetConfigs/oled/subdir_rules.mk
+-include targetConfigs/uart1/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -160,8 +163,8 @@ freertos.out: $(OBJS) $(GEN_CMDS) D:/compitation/NUEDC/diansai/freertos_builds_L
 # Other Targets
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "syscfg\ti_msp_dl_config.o" "startup_mspm0g350x_ticlang.o" "main_freertos.o" "ti_drivers_config.o" "targetConfigs\23l\23L_uart.o" "targetConfigs\key\ADC_SCAN.o" "targetConfigs\key\ADC_init.o" "targetConfigs\oled\OLED.o" "targetConfigs\oled\OLED_Task.o" 
-	-$(RM) "syscfg\ti_msp_dl_config.d" "startup_mspm0g350x_ticlang.d" "main_freertos.d" "ti_drivers_config.d" "targetConfigs\23l\23L_uart.d" "targetConfigs\key\ADC_SCAN.d" "targetConfigs\key\ADC_init.d" "targetConfigs\oled\OLED.d" "targetConfigs\oled\OLED_Task.d" 
+	-$(RM) "syscfg\ti_msp_dl_config.o" "startup_mspm0g350x_ticlang.o" "main_freertos.o" "ti_drivers_config.o" "targetConfigs\23l\23L_uart.o" "targetConfigs\key\ADC_SCAN.o" "targetConfigs\key\ADC_init.o" "targetConfigs\oled\OLED.o" "targetConfigs\oled\OLED_Task.o" "targetConfigs\uart1\uart1.o" 
+	-$(RM) "syscfg\ti_msp_dl_config.d" "startup_mspm0g350x_ticlang.d" "main_freertos.d" "ti_drivers_config.d" "targetConfigs\23l\23L_uart.d" "targetConfigs\key\ADC_SCAN.d" "targetConfigs\key\ADC_init.d" "targetConfigs\oled\OLED.d" "targetConfigs\oled\OLED_Task.d" "targetConfigs\uart1\uart1.d" 
 	-$(RMDIR) $(GEN_MISC_DIRS__QUOTED)
 	-@echo 'Finished clean'
 	-@echo ' '

@@ -54,6 +54,9 @@
 /* OLED 任务头文件 */
 #include "targetConfigs/oled/OLED_Task.h"
 
+/* 串口打印任务头文件 */
+#include "targetConfigs/uart1/uart1.h"
+
 /* AS201 IMU 任务头文件 */
 // #include "src/as201/AS201.h"
 
@@ -81,6 +84,9 @@ int main(void)
 
     /* Initialize OLED FreeRTOS tasks */
     Oled_FreeRTOS_Init();
+
+    /* Initialize UART FreeRTOS tasks */
+    Uart_FreeRTOS_Init();
 
     /* Initialize AS201 IMU Tasks */
     // IMU_FreeRTOS_Init();

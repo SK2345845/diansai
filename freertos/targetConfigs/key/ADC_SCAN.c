@@ -52,6 +52,8 @@ void vTaskKeyScan(void *pvParameters) {
     xLastWakeTime = xTaskGetTickCount();
     
     while (1) {
+
+        
         // 使用 vTaskDelayUntil 保证精确的 20ms 扫描周期
         vTaskDelayUntil(&xLastWakeTime, xBlockTime);
         
@@ -68,7 +70,7 @@ void vTaskKeyScan(void *pvParameters) {
             adc_configured = 1;
             DL_ADC12_disableConversions(ADC12_0_INST);
             DL_ADC12_initSingleSample(ADC12_0_INST,
-                DL_ADC12_REPEAT_MODE_DISABLED, 
+                DL_ADC12_REPEAT_MODE_ENABLED, 
                 DL_ADC12_SAMPLING_SOURCE_AUTO,
                 DL_ADC12_TRIG_SRC_SOFTWARE,
                 DL_ADC12_SAMP_CONV_RES_12_BIT,
@@ -91,11 +93,14 @@ void vTaskKeyScan(void *pvParameters) {
         // 每 100ms 刷新一次
         if (++display_div >= 5) {
             display_div = 0;
-            static uint16_t alive_cnt = 0;
-            alive_cnt++;
             
-            Oled_Queue_ShowString(1, 14, "   "); // 清除旧数字
-            Oled_Queue_ShowNum(1, 14, alive_cnt % 100, 2); // 右上角跳动的数字证明没死机
+            // 刷新第一行英文，确保始终显示
+            Oled_Queue_ShowString(1, 1, "Sys Init OK!");
+            
+            // 右下角闪烁点，证明系统没死机
+            static uint8_t dot_state = 0;
+            dot_state = !dot_state;
+            Oled_Queue_ShowChar(4, 16, dot_state ? '.' : ' ');
             
             Oled_Queue_ShowString(2, 1, "ADC Val: ");
             Oled_Queue_ShowNum(2, 10, adc_raw_value, 4);
@@ -154,7 +159,7 @@ void vTaskKeyLogic(void *pvParameters) {
     
     // 初始化显示屏幕框架
     Oled_Queue_Clear();
-    Oled_Queue_ShowString(1, 1, "System Init OK!");
+    Oled_Queue_ShowString(1, 1, "Sys Init OK!");
     
     while (1) {
         // 无限期阻塞等待按键有效按下消息（消抖并松手后才触发下一轮）

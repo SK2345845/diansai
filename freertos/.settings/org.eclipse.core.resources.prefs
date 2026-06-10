@@ -24,3 +24,5 @@ encoding//Debug/targetConfigs/key/subdir_rules.mk=UTF-8
 encoding//Debug/targetConfigs/key/subdir_vars.mk=UTF-8
 encoding//Debug/targetConfigs/oled/subdir_rules.mk=UTF-8
 encoding//Debug/targetConfigs/oled/subdir_vars.mk=UTF-8
+encoding//Debug/targetConfigs/uart1/subdir_rules.mk=UTF-8
+encoding//Debug/targetConfigs/uart1/subdir_vars.mk=UTF-8

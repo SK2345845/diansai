@@ -1,12 +1,7 @@
 # FIXED
 
-main_freertos.o: ../main_freertos.c \
- D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/ticlang/pthread.h \
- D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/ticlang/sys/types.h \
- D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/ticlang/sys/_internal.h \
- D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/ticlang/time.h \
- D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/ticlang/signal.h \
- D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/ticlang/sched.h \
+targetConfigs/uart1/uart1.o: ../targetConfigs/uart1/uart1.c \
+ ../targetConfigs/uart1/uart1.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/FreeRTOS.h \
  D:/compitation/NUEDC/diansai/freertos_builds_LP_MSPM0G3507_release_ticlang/FreeRTOSConfig.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/freertos/PTLS.h \
@@ -15,11 +10,12 @@ main_freertos.o: ../main_freertos.c \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/deprecated_definitions.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/portable/TI_ARM_CLANG/ARM_CM0/portmacro.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/mpu_wrappers.h \
+ D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/queue.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/task.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/list.h \
- ../ti_drivers_config.h \
- D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/DeviceFamily.h \
+ syscfg/ti_msp_dl_config.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/msp/msp.h \
+ D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/DeviceFamily.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/msp/m0p/mspm0g350x.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include/core_cm0plus.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/msp/peripherals/hw_adc12.h \
@@ -48,10 +44,9 @@ main_freertos.o: ../main_freertos.c \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/msp/peripherals/m0p/hw_debugss.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/msp/peripherals/m0p/hw_sysctl.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/msp/peripherals/m0p/sysctl/hw_sysctl_mspm0g1x0x_g3x0x.h \
- D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_gpio.h \
- D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_common.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/driverlib.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_adc12.h \
+ D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_common.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_factoryregion.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_core.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_aes.h \
@@ -65,6 +60,7 @@ main_freertos.o: ../main_freertos.c \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_sysctl.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/sysctl/dl_sysctl_mspm0g1x0x_g3x0x.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_gpamp.h \
+ D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_gpio.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_i2c.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_i2s.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_iwdt.h \
@@ -99,17 +95,8 @@ main_freertos.o: ../main_freertos.c \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_vref.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_wwdt.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_interrupt.h \
- D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_systick.h \
- syscfg/ti_msp_dl_config.h \
- ../targetConfigs/key/ADC_SCAN.h \
- D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/queue.h \
- ../targetConfigs/oled/OLED_Task.h ../targetConfigs/uart1/uart1.h
-D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/ticlang/pthread.h:
-D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/ticlang/sys/types.h:
-D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/ticlang/sys/_internal.h:
-D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/ticlang/time.h:
-D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/ticlang/signal.h:
-D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/ticlang/sched.h:
+ D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_systick.h
+../targetConfigs/uart1/uart1.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/FreeRTOS.h:
 D:/compitation/NUEDC/diansai/freertos_builds_LP_MSPM0G3507_release_ticlang/FreeRTOSConfig.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/posix/freertos/PTLS.h:
@@ -118,11 +105,12 @@ D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/porta
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/deprecated_definitions.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/portable/TI_ARM_CLANG/ARM_CM0/portmacro.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/mpu_wrappers.h:
+D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/queue.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/task.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/list.h:
-../ti_drivers_config.h:
-D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/DeviceFamily.h:
+syscfg/ti_msp_dl_config.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/msp/msp.h:
+D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/DeviceFamily.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/msp/m0p/mspm0g350x.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/third_party/CMSIS/Core/Include/core_cm0plus.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/msp/peripherals/hw_adc12.h:
@@ -151,10 +139,9 @@ D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/msp/peripherals/m0
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/msp/peripherals/m0p/hw_debugss.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/msp/peripherals/m0p/hw_sysctl.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/devices/msp/peripherals/m0p/sysctl/hw_sysctl_mspm0g1x0x_g3x0x.h:
-D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_gpio.h:
-D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_common.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/driverlib.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_adc12.h:
+D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_common.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_factoryregion.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_core.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_aes.h:
@@ -168,6 +155,7 @@ D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_flashctl.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_sysctl.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/sysctl/dl_sysctl_mspm0g1x0x_g3x0x.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_gpamp.h:
+D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_gpio.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_i2c.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_i2s.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_iwdt.h:
@@ -203,8 +191,3 @@ D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_vref.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_wwdt.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_interrupt.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_systick.h:
-syscfg/ti_msp_dl_config.h:
-../targetConfigs/key/ADC_SCAN.h:
-D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/queue.h:
-../targetConfigs/oled/OLED_Task.h:
-../targetConfigs/uart1/uart1.h:
