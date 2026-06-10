@@ -69,7 +69,6 @@ extern void *mainThread(void *arg0);
 static void prvSetupHardware(void);
 
 /*
-
  *  ======== main ========
  */
 int main(void)
@@ -96,12 +95,16 @@ int main(void)
 
     return (0);
 }
+// 初始化硬件
+// @param void
 static void prvSetupHardware(void)
 {
     SYSCFG_DL_init();
 }
-/*-----------------------------------------------------------*/
 
+/*-----------------------------------------------------------*/
+// 内存分配失败钩函数
+// @param void
 void vApplicationMallocFailedHook(void)
 {
     /*
@@ -122,7 +125,8 @@ void vApplicationMallocFailedHook(void)
         ;
 }
 /*-----------------------------------------------------------*/
-
+// 空闲钩函数
+// @param void
 void vApplicationIdleHook(void)
 {
     /*
@@ -139,7 +143,7 @@ void vApplicationIdleHook(void)
      */
 }
 /*-----------------------------------------------------------*/
-
+// 栈溢出钩函数
 #if (configCHECK_FOR_STACK_OVERFLOW)
 /*
      *  ======== vApplicationStackOverflowHook ========

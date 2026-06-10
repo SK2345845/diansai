@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS/include/c/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "__MSPM0G3507__"
+            ],
+            "cStandard": "c11",
+            "intelliSenseMode": "windows-clang-arm",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**",
+                    "C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS/include/c/**"
+                ],
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "compileCommands": [
+                "${workspaceFolder}/freertos/Debug/.clangd/compile_commands.json"
+            ]
+        }
+    ],
+    "version": 4
+}
