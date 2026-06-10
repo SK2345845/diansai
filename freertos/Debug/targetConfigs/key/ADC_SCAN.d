@@ -96,7 +96,8 @@ targetConfigs/key/ADC_SCAN.o: ../targetConfigs/key/ADC_SCAN.c \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_wwdt.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_interrupt.h \
  D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_systick.h \
- D:/compitation/NUEDC/diansai/freertos/targetConfigs/oled/OLED_Task.h
+ D:/compitation/NUEDC/diansai/freertos/targetConfigs/oled/OLED_Task.h \
+ D:/compitation/NUEDC/diansai/freertos/targetConfigs/mainTask/main_task.h
 ../targetConfigs/key/ADC_SCAN.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/kernel/freertos/Source/include/FreeRTOS.h:
 D:/compitation/NUEDC/diansai/freertos_builds_LP_MSPM0G3507_release_ticlang/FreeRTOSConfig.h:
@@ -193,3 +194,4 @@ D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/dl_wwdt.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_interrupt.h:
 D:/LeStoreDownload/CCS/mspm0_sdk_2_10_00_04/source/ti/driverlib/m0p/dl_systick.h:
 D:/compitation/NUEDC/diansai/freertos/targetConfigs/oled/OLED_Task.h:
+D:/compitation/NUEDC/diansai/freertos/targetConfigs/mainTask/main_task.h:

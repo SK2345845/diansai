@@ -11,7 +11,7 @@ void Key_FreeRTOS_Init(void) {
     // 2. 创建按键扫描任务（由于按键实时性要求高，赋予中高优先级 tskIDLE_PRIORITY + 2）
     xTaskCreate(vTaskKeyScan, 
                 "KeyScanTask", 
-                1024, 
+                256, 
                 NULL, 
                 tskIDLE_PRIORITY + 2, 
                 NULL);
@@ -19,7 +19,7 @@ void Key_FreeRTOS_Init(void) {
     // 3. 创建专门的按键后效处理任务（负责联动OLED显示）
     xTaskCreate(vTaskKeyLogic, 
                 "KeyLogicTask", 
-                1024, 
+                256, 
                 NULL, 
                 tskIDLE_PRIORITY + 1, 
                 NULL);

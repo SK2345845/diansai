@@ -27,7 +27,7 @@ void As201_FreeRTOS_Init(void) {
     // 2. 创建解析任务
     xTaskCreate(vTaskAs201Parse, 
                 "As201ParseTask", 
-                1024, 
+                512, 
                 NULL, 
                 tskIDLE_PRIORITY + 3, // 高优先级确保不丢包
                 NULL);

@@ -4,6 +4,7 @@
 /* 伪代码/注释占位：引入MSPM0库头文件 */
 #include "ti_msp_dl_config.h" 
 #include "targetConfigs/oled/OLED_Task.h"
+#include "targetConfigs/mainTask/main_task.h"
 
 /* 队列句柄定义 */
 QueueHandle_t xKeyQueue = NULL;
@@ -162,6 +163,9 @@ void vTaskKeyLogic(void *pvParameters) {
             // 当确实检测到有效按键时，在第四行打印触发的动作
             Oled_Queue_ShowString(4, 1, "Trigger: ");
             Oled_Queue_ShowNum(4, 10, received_key_id, 2);
+            
+            // 将按键值也传给 vTaskMainBrain (senderID 填 1 表示按键)
+            Main_SendKeyEvent(received_key_id, 1);
         }
     }
 }

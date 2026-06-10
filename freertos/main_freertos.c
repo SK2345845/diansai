@@ -89,11 +89,9 @@ int main(void)
     // 初始化 OLED 任务
     Oled_FreeRTOS_Init();
 
-    /* Initialize AS201 Laser FreeRTOS tasks */
-    As201_FreeRTOS_Init();
 
-    // 初始化 AS201 IMU 任务
-    // IMU_FreeRTOS_Init();
+    // 初始化 As201_FreeRTOS_Init任务
+    // As201_FreeRTOS_Init;
 
     // 初始化 Main Brain 总控任务
     MainTask_FreeRTOS_Init();
@@ -149,28 +147,6 @@ void MainTask_FreeRTOS_Init(void)
  *  @brief  通过 xMainQueue 接收 MainMsg_t 消息，
  *          根据 cmdType 分发到对应的处理分支。
  *
- *  工作流程（伪代码）：
- *     loop:
- *       阻塞等待消息（xQueueReceive）
- *       switch (msg.cmdType):
- *         case MAIN_CMD_KEY_EVENT:
- *             ── 解析按键 → 切换运行模式 / 触发标定 / 紧急停车
- *         case MAIN_CMD_SENSOR_DATA:
- *             ── 更新全局传感器结构体 → 阈值检测 → 异常时告警
- *         case MAIN_CMD_SYSTEM_ERROR:
- *             ── 根据 errorCode 分级处理 → 恢复 / 降级 / 停机
- *         case MAIN_CMD_NAV_UPDATE:
- *             ── 更新当前姿态/位置 → 决策下一步运动方向
- *         case MAIN_CMD_UART_RX:
- *             ── 解析外部指令 → 执行相应操作
- *         case MAIN_CMD_MOTOR_STATUS:
- *             ── 更新电机状态 → 故障时停车
- *         case MAIN_CMD_TIMER_EVENT:
- *             ── 定时触发的周期性决策（如 PID 控制周期）
- *         case MAIN_CMD_USER_REQUEST:
- *             ── 用户自定义逻辑
- *         default:
- *             ── 未知命令，忽略或记录日志
  */
 void vTaskMainBrain(void *pvParameters)
 {
@@ -187,9 +163,14 @@ void vTaskMainBrain(void *pvParameters)
             /* ------------------------------------------------------ */
             case MAIN_CMD_KEY_EVENT:
             {
+                uint8_t key_id = (uint8_t)msg.param1;
+                
+                // 在 OLED 第二行显示 MainBrain 接收到的按键信息
+                Oled_Queue_ShowString(2, 1, "BrainKey: ");
+                Oled_Queue_ShowNum(2, 11, key_id, 2);
+
                 /*
                  * 伪代码：
-                 *   key_id = (uint8_t)msg.param1;
                  *   if (key_id == KEY_1) { 切换运行模式; }
                  *   if (key_id == KEY_2) { 启动/暂停任务; }
                  *   if (key_id == KEY_3) { 紧急停车; }
