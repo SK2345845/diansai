@@ -4,7 +4,7 @@
 
 /* 队列句柄定义 */
 QueueHandle_t xOledQueue = NULL;
-
+//
 /**
  * @brief  初始化 OLED 任务和队列
  */
