@@ -128,4 +128,5 @@ SUBDIRS := \
 targetConfigs/23l \
 targetConfigs/key \
 targetConfigs/oled \
+targetConfigs/uart1 \
 
