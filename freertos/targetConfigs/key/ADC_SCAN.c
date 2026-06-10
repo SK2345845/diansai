@@ -94,8 +94,8 @@ void vTaskKeyScan(void *pvParameters) {
             static uint16_t alive_cnt = 0;
             alive_cnt++;
             
-            Oled_Queue_ShowString(1, 14, "   "); // 清除旧数字
-            Oled_Queue_ShowNum(1, 14, alive_cnt % 100, 2); // 右上角跳动的数字证明没死机
+            // Oled_Queue_ShowString(1, 14, "   "); // 清除旧数字
+            // Oled_Queue_ShowNum(1, 14, alive_cnt % 100, 2); // 右上角跳动的数字证明没死机
             
             Oled_Queue_ShowString(2, 1, "ADC Val: ");
             Oled_Queue_ShowNum(2, 10, adc_raw_value, 4);

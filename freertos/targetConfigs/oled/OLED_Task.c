@@ -75,12 +75,16 @@ void vTaskOledDisplay(void *pvParameters) {
 /* 下面是一些提供给其他业务任务的快捷 API 函数，方便直接投递消息   */
 /* ========================================================== */
 
+// 清除显示
 void Oled_Queue_Clear(void) {
     OledMsg_t msg;
     msg.type = OLED_MSG_CLEAR;
     xQueueSend(xOledQueue, &msg, 0);
 }
-
+// 显示字符
+// @param Line 行号
+// @param Column 列号
+// @param Char 字符
 void Oled_Queue_ShowChar(uint8_t Line, uint8_t Column, char Char) {
     OledMsg_t msg;
     msg.type = OLED_MSG_SHOW_CHAR;
@@ -89,7 +93,11 @@ void Oled_Queue_ShowChar(uint8_t Line, uint8_t Column, char Char) {
     msg.data.ch = Char;
     xQueueSend(xOledQueue, &msg, 0);
 }
-
+// 显示字符串
+// @param Line 行号
+// @param Column 列号
+// @param String 字符串
+// @param Length 显示长度
 void Oled_Queue_ShowString(uint8_t Line, uint8_t Column, const char *String) {
     OledMsg_t msg;
     msg.type = OLED_MSG_SHOW_STRING;
@@ -99,7 +107,11 @@ void Oled_Queue_ShowString(uint8_t Line, uint8_t Column, const char *String) {
     msg.data.str[16] = '\0'; // 确保字符串以 null 结尾
     xQueueSend(xOledQueue, &msg, 0);
 }
-
+// 显示无符号整数
+// @param Line 行号
+// @param Column 列号
+// @param Number 无符号整数
+// @param Length 显示长度
 void Oled_Queue_ShowNum(uint8_t Line, uint8_t Column, uint32_t Number, uint8_t Length) {
     OledMsg_t msg;
     msg.type = OLED_MSG_SHOW_NUM;
@@ -109,7 +121,11 @@ void Oled_Queue_ShowNum(uint8_t Line, uint8_t Column, uint32_t Number, uint8_t L
     msg.data.num = Number;
     xQueueSend(xOledQueue, &msg, 0);
 }
-
+// 显示有符号整数
+// @param Line 行号
+// @param Column 列号
+// @param Number 有符号整数
+// @param Length 显示长度
 void Oled_Queue_ShowSignedNum(uint8_t Line, uint8_t Column, int32_t Number, uint8_t Length) {
     OledMsg_t msg;
     msg.type = OLED_MSG_SHOW_SIGNED_NUM;
@@ -119,7 +135,11 @@ void Oled_Queue_ShowSignedNum(uint8_t Line, uint8_t Column, int32_t Number, uint
     msg.data.snum = Number;
     xQueueSend(xOledQueue, &msg, 0);
 }
-
+// 显示十六进制数
+// @param Line 行号
+// @param Column 列号
+// @param Number 十六进制数
+// @param Length 显示长度
 void Oled_Queue_ShowHexNum(uint8_t Line, uint8_t Column, uint32_t Number, uint8_t Length) {
     OledMsg_t msg;
     msg.type = OLED_MSG_SHOW_HEX_NUM;
@@ -129,7 +149,11 @@ void Oled_Queue_ShowHexNum(uint8_t Line, uint8_t Column, uint32_t Number, uint8_
     msg.data.num = Number;
     xQueueSend(xOledQueue, &msg, 0);
 }
-
+// 显示二进制数
+// @param Line 行号
+// @param Column 列号
+// @param Number 二进制数
+// @param Length 显示长度
 void Oled_Queue_ShowBinNum(uint8_t Line, uint8_t Column, uint32_t Number, uint8_t Length) {
     OledMsg_t msg;
     msg.type = OLED_MSG_SHOW_BIN_NUM;
